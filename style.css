@@ -24,14 +24,20 @@ body {
   }
 
   /* ナビゲーションのレイアウト */
-  #nav-link {
+  #nav-pc {
     text-align: right;
-    font-size: 14px;
+    font-size: 20px;
     padding-top: 15px;
   }
 
   /* ナビゲーションのリンクの装飾設定 */
-  #nav-link > a {
+  #nav-pc > a {
     text-decoration: none;
     margin-left: 20px;
+  }
+
+  /* 自己紹介の編集 */
+  #syoukai {
+    background-color:aqua;
+    border: solid 1px; 
   }
