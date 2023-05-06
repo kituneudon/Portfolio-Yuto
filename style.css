@@ -40,4 +40,9 @@ body {
   #syoukai {
     background-color:aqua;
     border: solid 1px; 
+    font-size: 20px;
+  }
+
+  #syoukai > p {
+    font-size: 20px;
   }
