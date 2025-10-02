@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "G:\\Home_Page\\Portfolio-Yuto\\index.html"
+            "file": "https://github.com/kituneudon/Portfolio-Yuto.git"
         }
     ]
 }
