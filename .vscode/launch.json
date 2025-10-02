@@ -9,6 +9,7 @@
             "request": "launch",
             "name": "Open index.html",
             "file": "https://github.com/kituneudon/Portfolio-Yuto.git"
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
