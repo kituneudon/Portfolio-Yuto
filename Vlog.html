@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,28 @@
     <link rel="stylesheet" href="style.css">
     <title>日々の気付き ユウの日記</title>
 </head>
+
 <body>
-    <!-- ヘッダー -->
     <header>
-        <a href="Vlog.html"><h2>Top</h2></a>
-    <!--ナビゲーションメニュー-->
-    <nav id="nav-pc">
-        <a href="Vlog.html"></a>       
-        <a href="index.html#footer">お問い合わせ</a>
-    </nav>
-</header>
+        <a href="Vlog.html">
+            <h2>Top</h2>
+        </a>
+        <nav id="nav-pc">
+            <a href="index.html#footer">お問い合わせ</a>
+        </nav>
+    </header>
+    <div id="Hlink">
+        <a href="https://kituneudon.github.io/kitune/">㊙リンク</a>
+    </div>
+    <div class="coming" style="display:none;"> coming soon
+    </div>
+
+    <script>
+        // ページロード後に非表示に設定した要素をすぐに表示
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.coming').style.display = 'block';
+        });
+    </script>
 </body>
+
 </html>

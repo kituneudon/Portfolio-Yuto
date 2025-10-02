@@ -11,39 +11,46 @@
 </head>
 
 <body>
-    <!-- ヘッダー -->
     <header>
-                <a href="index.html"><h2>ホーム♪</h2></a>
-        <!--ナビゲーションメニュー-->
+        <a href="index.html">
+            <h2>ホーム♪</h2>
+        </a>
         <nav id="nav-pc">
-                <a href="index.html#syoukai">自己紹介</a>       
-                <a href="index.html#po-toforio">ポートフォリオ集</a>
-                <a href="index.html#footer">お問い合わせ</a>
+            <a href="index.html#syoukai">自己紹介</a>
+            <a href="index.html#po-toforio">ポートフォリオ集</a>
+            <a href="index.html#footer">お問い合わせ</a>
         </nav>
     </header>
-    <!-- スクロールする -->
     <section id="syoukai">
-    <!-- 自己紹介内容 -->
-    <h2>自己紹介</h2>
-    <p>こんにちは　ユウと申します♪　趣味でPCいじりをするのが好きな"にわか"オタクです。
-        <br> 今回からポートフォリオを製作するにあたって、新しくホームページを開設いたしました。
-        <br> もし、このポートフォリオ集を気に入っていただけましたら、ぜひ私にお仕事を下さい。
-        <br> 宜しくお願い致しますね＼(*≧ω≦*)／
-    </p>
+        <h2>自己紹介</h2>
+        <p>こんにちは　ユウと申します♪　趣味でPCいじりをするのが好きな"にわか"オタクです。
+            <br> 今回からポートフォリオを製作するにあたって、新しくホームページを開設いたしました。
+            <br> もし、このポートフォリオ集を気に入っていただけましたら、ぜひ私にお仕事を下さい。
+            <br> 宜しくお願い致しますね＼(*≧ω≦*)／
+        </p>
     </section>
-    <!-- ポートフォリオ集に飛ぶ　画像付き-->
     <section id="po-toforio">
         <h2>ポートフォリオ集</h2>
-        <a href="Vbosyu.html"><img src="">募集サイト</a>
-        <a href="Vlog.html"><img src="">ブログサイト</a>
+        <ul>
+            <li><a href="Vbosyu.html"><img src="">募集サイト</a></li>
+            <li><a href="Vlog.html"><img src="">ブログサイト</a></li>
+        </ul>        
     </section>
 
-    <!-- お問い合わせSNS -->
     <section id="footer">
         <h2>お問い合わせSNS</h2>
         <a href="mailto:youdoucunshang@gmail.com">Mail</a>
     </section>
+
+    <div class="coming" style="display:none;"> coming soon
+    </div>
+
+    <script>
+        // ページロード後に非表示に設定した要素をすぐに表示
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.coming').style.display = 'block';
+        });
+    </script>
 </body>
 
-</body>
 </html>

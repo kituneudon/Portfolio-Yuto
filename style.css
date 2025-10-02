@@ -1,113 +1,307 @@
 /* PC、スマホ共通スタイル */
 body {
-    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
-  }
-  
- p {
-    font-size: 15px;
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-  
-  /*================
-   PC用のスタイル 
-  =================*/
-    /* 横幅設定 */
- body {
-      max-width: 1080px;
-      min-width: 960px;
-      margin: 0 auto 0 auto;
+
+p {
+  font-size: 20px;
+}
+
+/* 共通ヘッダー（基本的なレイアウト） */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* 背景色を共通化 */
+  z-index: 1000; /* Z-indexも共通化 */
+}
+
+/* ナビゲーションのリンクの装飾設定（PC/SP共通） */
+#nav-pc>a {
+  text-decoration: none;
+  /* 他の設定はメディアクエリ内で調整 */
+}
+
+/* Canvasのクリック無効化設定 */
+.interactive-canvas[style*="display: none"] {
+  pointer-events: none;
+  /* クリックやホバーを完全に無効化 */
+}
+
+#Hlink {
+  position: fixed; /* 画面下部に固定 */
+  bottom: 50px; /* coming soon の上に配置するため、少し上げる */
+  right: 30px; /* 右寄せ */
+  text-align: right;
+  width: auto; /* コンテンツの幅に合わせる */
+  font-size: 10px;
+  z-index: 999;
+}
+
+/* coming soon のスタイル */
+.coming {
+  position: fixed; /* 画面最下部に固定 */
+  bottom: 10px;
+  width: 100%;
+  text-align: center; /* 中央寄せ */
+  font-size: 16px;
+  color: #888;
+  z-index: 999; /* 他のコンテンツの下に配置 */
 }
 
 /* アニメーション設定 */
-
-#Afade > p {
+#Afade>p {
+  position: absolute;
+  top: 650px;
+  /* LEDの縦位置に合わせて調整 */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  margin-top: -80px;
-  animation-name: Afade;
-  animation-duration: 1s;
-  animation-iteration-count: 50;
-
+  width: 100%;
+  font-size: 24px;
+  animation: Afade 1s infinite alternate;
 }
 
-@keyframes Afade{
-  0%{
+#Bfade>p {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  font-size: 75px;
+  animation: Bfade 3s forwards;
+}
+
+@keyframes Afade {
+  from {
     opacity: 0;
   }
-  100%{
+
+  to {
     opacity: 1;
   }
 }
 
-#Bfade > p {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 40px;
-  animation-name: Bfade;
-  animation-duration: 30s;
-
-}
-
-@keyframes Bfade{
-  0%{
+@keyframes Bfade {
+  from {
     opacity: 0;
   }
-  25%{
-    opacity: 7.5;
-  }
-  50%{
-    opacity: 15;
-  }
-  75%{
-    opacity: 22.5;
-  }
-  100%{
-    opacity: 30;
+
+  to {
+    opacity: 1;
   }
 }
 
+/* Vbosyu.htmlでのアニメーション後のヘッダー固定表示 */
+#startHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ナビゲーションのレイアウト */
+#nav-pc {
+  text-align: right;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+/* 文字設定　募集サイト */
+.imisinn {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(20px, 4vw, 50px);
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.imisinn>p {
+  margin-top: 30px;
+  text-align: right;
+  font-size: clamp(16px, 3vw, 30px);
+}
+
+/* 自己紹介の編集 */
+#syoukai>p {
+  background-color: aqua;
+  border: solid 1px;
+  font-size: 20px;
+  padding: 10px;
+}
 
 h2 {
   text-decoration: underline;
 }
 
- /* ヘッダー */
- header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* ナビゲーションのレイアウト */
-  #nav-pc {
-    text-align: right;
-    font-size: 20px;
-    padding-top: 20px;
-  }
-
-  /* ナビゲーションのリンクの装飾設定 */
-  #nav-pc > a {
-    text-decoration: none;
-    margin-left: 20px;
-    
-  }
-
-  /* 自己紹介の編集 */
-
-  #syoukai > p {
-    background-color:aqua;
-    border: solid 1px; 
-    font-size: 20px;
-  }
-
-
-
-  /* 文字設定　募集サイト */
-
-.imisinn {
-  text-align: center;
-  font-size: 30px;
+/* Canvas レスポンシブ対応 */
+#suich {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 
-.imisinn > p {
-  text-align: right;
-  font-size: 30px;
-  padding-top: 30px;
+/*================
+ PC用のスタイル 
+=================*/
+@media (min-width: 769px) {
+
+  /* 横幅設定 */
+  body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
+  }
+
+  /* ヘッダーの幅をbody幅いっぱいに */
+  header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px; /* 共通スタイルから移動・調整 */
+  }
+
+  /* ナビゲーションを柔軟に */
+  #nav-pc {
+    flex: 1;
+    min-width: 0;
+    text-align: right; /* 共通スタイルから移動 */
+    padding-top: 0; /* 共通スタイルから移動 */
+    white-space: nowrap;
+  }
+
+  #nav-pc>a {
+    margin-left: 20px;
+    font-size: 20px; /* 共通スタイルから移動 */
+  }
+
+  /* header h2 のマージン調整 */
+  header h2 {
+    margin: 0;
+  }
+}
+
+/*==============================
+ スマホ・タブレット対応用のスタイル 
+==============================*/
+@media (max-width: 768px) {
+
+  /* 基本設定 */
+  body {
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+
+  /* ヘッダーのスマホ対応 */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* 共通スタイルから移動 */
+  }
+
+  header h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  /* ナビゲーション */
+  #nav-pc {
+    width: 100%;
+    text-align: center; /* 共通スタイルから移動 */
+    font-size: 16px;
+    padding-top: 10px; /* 共通スタイルから移動 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #nav-pc>a {
+    display: inline-block;
+    margin: 5px 10px;
+    white-space: nowrap;
+    font-size: 16px; /* 共通スタイルから移動 */
+    padding: 5px 10px;
+  }
+
+  /* アニメーションテキスト */
+  #Afade>p {
+    top: 500px;
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  #Bfade>p {
+    top: 80px;
+    font-size: 40px;
+    padding: 0 20px;
+  }
+
+  /* 意味深テキスト */
+  .imisinn {
+    top: 200px;
+    white-space: normal;
+    text-align: center;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .imisinn>p {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* 自己紹介セクション */
+  #syoukai>p {
+    font-size: 16px;
+    padding: 15px;
+    margin: 10px;
+  }
+}
+
+/* 小さいスマホ用（375px以下） */
+@media (max-width: 375px) {
+  #nav-pc {
+    font-size: 14px;
+  }
+
+  #nav-pc>a {
+    margin: 5px 5px;
+  }
+
+  #Bfade>p {
+    font-size: 32px;
+  }
+
+  #Afade>p {
+    font-size: 16px;
+  }
+
+  .imisinn {
+    font-size: 18px;
+  }
+
+  .imisinn>p {
+    font-size: 14px;
+  }
 }
