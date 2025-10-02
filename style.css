@@ -3,6 +3,8 @@ body {
   font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
   margin: 0;
   padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 p {
@@ -32,24 +34,24 @@ header {
 }
 
 #Hlink {
-  position: fixed; /* 画面下部に固定 */
-  bottom: 50px; /* coming soon の上に配置するため、少し上げる */
-  right: 30px; /* 右寄せ */
-  text-align: right;
+  position: absolute;
+  bottom: 35px;
+  right: 30px;
   width: auto; /* コンテンツの幅に合わせる */
+  text-align: right;
   font-size: 10px;
   z-index: 999;
 }
 
-/* coming soon のスタイル */
+/* coming soon のスタイル*/
 .coming {
-  position: fixed; /* 画面最下部に固定 */
+  position: absolute;
   bottom: 10px;
   width: 100%;
-  text-align: center; /* 中央寄せ */
+  text-align: center;
   font-size: 16px;
   color: #888;
-  z-index: 999; /* 他のコンテンツの下に配置 */
+  z-index: 999;
 }
 
 /* アニメーション設定 */
